@@ -1,0 +1,2235 @@
+
+/* CSS сайта - добавление стилизации блоков и элементов сайта - Автор Скоморохова Анита Ильинична П19.1 */
+
+/* Подключение шрифтов
+/* Montserrat */
+@font-face {
+    font-family: "MontserratRegular";  
+    src: url("../fonts/Montserrat-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+} 
+@font-face {
+    font-family: "MontserratMedium";  
+    src: url("../fonts/Montserrat-Medium.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+} 
+@font-face {
+    font-family: "MontserratSemiBold";  
+    src: url("../fonts/Montserrat-SemiBold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+} 
+@font-face {
+    font-family: "MontserratBold";  
+    src: url("../fonts/Montserrat-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+} 
+@font-face {
+    font-family: "MontserratExtraBold";  
+    src: url("../fonts/Montserrat-ExtraBold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+} 
+
+/* Основной стиль */
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike,
+strong, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+.wrapper {
+    margin: 0 144px;
+}
+.wrapper-2 {
+    margin: 0 300px;
+}
+a {
+    text-decoration: none;
+}
+ul, ol {
+    list-style-type: none;
+}
+/* Шапка сайта */
+.header {
+    height: 80px;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s;
+}
+.activeHeader {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.activeHeader .header-content .menu nav ul li a {
+    color: #111111;
+}
+.activeHeader .btn-num div:nth-child(1) {
+    color: #111111;
+}
+.activeHeader .btn-num div:nth-child(1):hover {
+    color: #FFFFFF;
+}
+.activeHeader .btn-num:hover {
+    color: #FFFFFF;
+}
+/* .activeHeader .logo a {
+    content: "<img src='img/svg/LOGO-BLACK.svg' alt='Логотип Домостроительного Комбината'>";
+} */
+.header-content {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+.header-content .logo img {
+    width: 171px;
+    height: 57px;
+}
+.header-content .menu nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-content .menu nav ul li {
+    margin: 0 20px;
+}
+.header-content .menu nav ul li:first-child {
+    margin: 0px 20px 0px 0px;
+}
+.header-content .menu nav ul li:last-child {
+    margin: 0px 0px 0px 20px;
+}
+.header-content .menu nav ul li a {
+    font-family: 'MontserratExtraBold', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Функциональные кнопки в шапке */
+.button-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn-num {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.btn-num div:nth-child(1) {
+    font-family: "MontserratSemiBold", sans-serif; 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.btn-num div:nth-child(2), .btn-eye, .btn-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #EE8000;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+.btn-num div:nth-child(2) svg path, .btn-eye svg path{
+    transition: 0.5s;
+}
+.btn-num:hover {
+    width: 230px;
+    height: 40px;
+    background: #EE8000;
+}
+.btn-num:hover div:nth-child(2) svg path, .btn-eye:hover svg path {
+    fill: #FFFFFF;
+}
+.btn-menu {
+    position: relative;
+    display: none;
+}
+.btn-menu:hover {
+    cursor: pointer;
+}
+.btn-menu .line:nth-child(1), 
+.btn-menu .line:nth-child(2), 
+.btn-menu .line:nth-child(3) {
+    width: 20px;
+    height: 1.5px;
+    background-color: #000000;
+    position: absolute;
+    transition: 0.3s;
+    left: 10px;
+}
+.btn-menu:hover .line:nth-child(1), 
+.btn-menu:hover .line:nth-child(2), 
+.btn-menu:hover .line:nth-child(3) {
+    background-color: #FFFFFF;
+
+}
+.btn-menu .line:nth-child(1) {
+    top: 13px;
+}
+.btn-menu .line:nth-child(2) {
+    top: 19px;
+}
+.btn-menu .line:nth-child(3) {
+    top: 25px;
+}
+/* Главный экран */
+/* Видео фон */
+.video_wrap {
+    position: absolute;
+    overflow: hidden;
+    background: url(../img/photo/bg-main.png) center repeat;
+    z-index: -999;
+    min-height: 780px;
+    max-height: 780px;
+    display: block;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+}
+.video-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 780px;
+    max-height: 780px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -997;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 100px;
+}
+.video_bg {
+    display: block;
+    position: relative;
+    z-index: 0;
+    margin: 0 auto;
+    width: 125%;
+    z-index: -998;
+
+    margin-bottom: 100px;
+}
+/* Контент главного экрана */
+.video-black h1 {
+    font-family: 'MontserratRegular', sans-serif;
+    font-weight: 400;
+    font-size: 68px;
+    line-height: 83px;
+    text-align: center;
+    
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+.video-black h1 span{
+    font-family: "MontserratSemiBold", sans-serif; 
+    font-weight: 600;
+    color: #EE8000;
+}
+/* Кнопка BTN */
+.btn {
+    text-decoration: none;
+    width: 280px;
+    height: 40px;
+    background: #EE8000;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+    font-family: "MontserratSemiBold", sans-serif; 
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: 0.2s;
+}
+.btn:hover {
+    background: #FF9820;
+    box-shadow: 0px 3px 10px rgba(255, 203, 142, 0.49);
+}
+.btn:focus {
+    background: #FF9820;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.6);
+}
+/* Стиилизация секций */
+.upContent {
+    margin-top: 880px;
+}
+.section {
+    margin-bottom: 100px;
+}
+.section h2, .leftTitle h1, .contactage-form h4 {
+    display: flex;
+    justify-content: center;
+
+    font-family: "MontserratSemiBold", sans-serif; 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 51px;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: #111111;
+    margin-bottom: 24px;
+}
+.section h2 div, .leftTitle h1 div {
+    position: relative;
+}
+.section h2 div::before, .leftTitle h1 div::before {
+    content: "";
+    position: absolute;
+    background-image: url(../img/svg/blob.svg);
+    width: 69px;
+    height: 60px;
+    background-size: cover;
+    top: -4px;
+    left: -8px;
+    z-index: -1;
+}
+/* Стилизация секция "Наши преимущества" */
+.ourPlus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.ourPlus-item {
+    background: #FFFFFF;
+    /* Тень карточки */
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+
+    margin: 10px;
+    height: auto;
+    width: calc(100% / 4 - 20px);
+    position: relative;
+}
+/* Картинки блоков */
+.ourPlus-item:nth-child(1)::after,
+.ourPlus-item:nth-child(2)::after,
+.ourPlus-item:nth-child(3)::after,
+.ourPlus-item:nth-child(4)::after {
+    position: absolute;
+    content: "";
+    width: 93px;
+    height: 93px;
+    right: 20px;
+    top: 20px;
+    background-size: 100% 100%;
+}
+.ourPlus-item:nth-child(1)::after {background-image: url(../img/photo/plus/1-medal.svg);}
+.ourPlus-item:nth-child(2)::after {background-image: url(../img/photo/plus/2-idea.svg);}
+.ourPlus-item:nth-child(3)::after {background-image: url(../img/photo/plus/3-family.svg);}
+.ourPlus-item:nth-child(4)::after {background-image: url(../img/photo/plus/4-hands.svg);}
+/* Внутрянняя информация блока */
+.ourPlus-num {
+    font-family: "MontserratSemiBold", sans-serif; 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 117px;
+    color: #111111;
+    margin-bottom: 12px;
+}
+.ourPlus-txt {
+    font-family: "MontserratMedium", sans-serif; 
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #111111;
+}
+/* Секция "Наши проекты" */
+.ourProject {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+.ourProject-item {
+    background: #FFFFFF;
+    /* Тень карточки */
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: calc(100% / 3 - 20px) !important;
+    height: auto;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+
+    transition: all 0.5s ease-out;
+}
+.ourProject-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.ourProject-item a {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+.ourProject-item a img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 14px;
+    border-radius: 5px;
+}
+.ourProject-item a p:nth-child(2){
+    margin-bottom: 10px;
+    font-family: "MontserratSemiBold", sans-serif; 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+}
+.ourProject-item a p:nth-child(3){
+    padding-left: 30px;
+    position: relative;
+
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+}
+.ourProject-item a p:nth-child(3)::before{
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    background-image: url(../img/svg/location.svg);
+    width: 20px;
+    height: 20px;
+}
+/* Секция "Условия покупки" */
+.purchase {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.purchase-item {
+    /* Тень карточки */
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 44px 30px;
+    position: relative;
+    margin: 10px;
+    height: 190px;
+}
+.purchase-item:nth-child(1) {
+    width: calc(100% / 2 - 20px);
+}
+.purchase-item:nth-child(2) {
+    width: calc(100% / 4 - 20px);
+}
+.purchase-item:nth-child(3) {
+    width: calc(100% / 4 - 20px);
+}
+.purchase-item:nth-child(4) {
+    width: calc(100% / 1 - 20px);
+}
+.purchase-item:hover a img {
+    filter: grayscale(0);
+}
+.purchase-item a {
+    width: 100%;
+    height: 100%;
+}
+.purchase-item a img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    filter: grayscale(1);
+    transition: 1s;
+    z-index: -1;
+}
+.purchase-item a p:nth-child(2){
+    font-family: 'MontserratBold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    
+    color: #111111;
+    margin-bottom: 24px;
+}
+.purchase-item a p:nth-child(3){
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #2C2C2C;
+}
+/* Секция "Подбор квартиры" */
+.formCalc, .contactage-form {
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px 0px 44px 0px;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    /* height: 220px; */
+}
+.formCalc::before,
+.formCalc::after,
+.contactage-form::before,
+.contactage-form::after {
+    position: absolute;
+    content: "";
+    width: 144px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.formCalc::before, .contactage-form::before {
+    top: 0;
+    left: 0;
+    background-image: url(../img/svg/form-left.png);
+}
+.formCalc::after, .contactage-form::after {
+    top: 0;
+    right: 0;
+    background-image: url(../img/svg/form-right.png);
+}
+/* Стилизация элементов формы */
+.formFilter-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.formFilter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.formZayvka {
+    justify-content: flex-end;
+}
+.filter-param-box {
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+.filter-param-header {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #2C2C2C;
+    margin-bottom: 12px;
+}
+.filter-param-body {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    background: #F8F8F8;
+    border: 1px solid #F2F2F2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 11px 20px;
+    height: 40px;
+}
+.filter-param-body select{
+    width: 16em;
+}
+.price-width input{
+    width: 5em;
+}
+.place-width input{
+    width: 3em;
+}
+.mainInput-width input{
+    width: 15em;
+}
+.filter-param-body div {
+    margin: 0px 2px;
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #111111;
+}
+.filter-param-body div sup {
+    font-size: 10px;
+}
+.filter-param-checkbox {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.checkbox-style {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.checkbox-style div {
+    position: absolute;
+    z-index: 10;
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.custom-checkbox+label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    box-sizing: border-box;
+    outline: none;
+}
+.custom-checkbox+label::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: '';
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    transition: 0.3s;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid #F8F8F8;
+}
+.custom-checkbox:checked+label::before {
+    background: #FFBA68;
+    border: 1px solid #FF9C28;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+}
+
+
+.filter-param-body select, 
+.filter-param-body input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    padding: 0px;
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #111111;
+}
+.filter-param-body input::placeholder {
+    color: #B3B3B3;
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+/*  */
+.filter-checkbox {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.custom-checkbox-ps {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.custom-checkbox-ps+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.custom-checkbox-ps+label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #F2F2F2;
+    border-radius: 5px;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    position: relative;
+}
+.custom-checkbox-ps:checked+label::before {
+    content: "";
+    background-image: url(../img/svg/checkbox-img.svg);
+    background-size: 8.95px 16.22px;
+}
+/* стили при наведении курсора на checkbox */
+.custom-checkbox-ps:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #FFD39E;
+}
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.custom-checkbox-ps:not(:disabled):active+label::before {
+    background-color: #FFD39E;
+    border-color: #FFD39E;
+}
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox-ps:focus+label::before {
+    box-shadow: 0px 0px 4px 1px #FFD9AD;
+}
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox-ps:focus:not(:checked)+label::before {
+    border-color: #FFD39E;
+}
+.filter-checkbox label {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #111111;
+}
+.filter-checkbox label a{
+    padding-left: 5px;
+    text-decoration-line: underline;
+    color: #FF9C28;
+}
+
+/*  */
+.contactage-form .formZayvka {
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px 0px 30px 0px;
+
+}
+.contactage-form h4 {
+    font-size: 24px;
+    line-height: 29px;
+}
+.contactage-form .formFilter-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.contactage-form .filter-param-box {
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+.contactage-form .filter-checkbox {
+    width: 16em;
+    margin-bottom: 20px;
+}
+/* Секция Новости компании */
+.news-blocks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.new-item {
+    width: calc(100% / 3 - 10px);
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px 20px 30px 20px;
+    transition: 0.3s;
+}
+.new-item:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+/* .new-item a{} */
+.new-item a .date-more{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.date-more .date, .date-more .more {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FF9C28;
+}
+.new-item a img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.new-item a h3{
+    font-family: 'MontserratMedium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #111111;
+    margin-bottom: 24px;
+}
+.new-item a p{
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+}
+.new-item-last {
+    display: none;
+}
+/* Подвал сайта */
+.footer {
+    background: #272727;
+}
+.footer-content-up {
+    box-sizing: border-box;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.footer-content-up img{
+    height: 86px;
+    width: 255px; 
+    margin-bottom: 24px;
+}
+.footer-content-up > div p {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    
+    color: #FFFFFF;
+    width: 19em;
+}
+.footer-content-up > div .title {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+}
+.footer-content-up > div ul li {
+    margin-bottom: 10px;
+}
+.footer-content-up > div ul li a{
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+.footer-content-up > div ul li a:hover,
+.footer-content-up > div .info li:nth-child(3) a:hover,
+.footer-conten-down p a:hover {
+    text-decoration: underline;
+    color: #EE8000;
+}
+.footer-content-up > div .info {
+    margin-bottom: 20px;
+}
+.footer-content-up > div .info li:nth-child(1) {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #EE8000;
+}
+.footer-content-up > div .info li:nth-child(3) a,
+.footer-content-up > div .info li:nth-child(4) {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    text-transform: none !important;
+    transition: 0.3s;
+}
+.footer-conten-down {
+    background: #232323;
+    box-sizing: border-box;
+    padding: 17px 0px 16px 0px;
+}
+.footer-conten-down p {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+}
+.footer-conten-down p a{
+    color: #FFFFFF;
+    text-decoration:underline !important;
+    transition: 0.3s;
+}
+
+/* Стилизация хлебных крошек на сайте */
+.breadcrumbs {
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+.breadcrumbs a {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-transform: uppercase;
+    color: #111111;
+}
+
+/* Стилизация страницы о компании */
+.leftTitle h1,
+.leftTitle h2 {
+    justify-content: flex-start;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: left;
+}
+.about-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.about-block .about-child {
+    width: calc(100% / 2 - 10px);
+}
+.about-block .text {
+    box-sizing: border-box;
+    padding: 30px 50px;
+    background: #FFFFFF;
+
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.about-block .text p{
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+    margin-bottom: 24px;
+}
+.about-block .ourPlus {
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.about-block .ourPlus-item {
+    width: calc(100% / 2 - 10px);
+    margin: 0px;
+}
+.about-block .ourPlus-item:nth-child(2)::after {background-image: url(../img/photo/plus/3-family.svg);}
+.about-block .ourPlus-item:nth-child(3)::after {background-image: url(../img/photo/plus/5-city.svg);}
+.about-block .ourPlus-item:nth-child(4)::after {background-image: url(../img/photo/plus/6-contry.svg);}
+.about-block .image img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.techology-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.techology-item {
+    box-sizing: border-box;
+    padding: 20px 170px 30px 20px;
+    background: #FFFFFF;
+
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    position: relative;
+    width: calc(100% / 3 - 20px);
+}
+.techology-item:nth-child(1)::after,
+.techology-item:nth-child(2)::after,
+.techology-item:nth-child(3)::after {
+    position: absolute;
+    content: "";
+    width: 130px;
+    height: 130px;
+    right: 20px;
+    top: 20px;
+    background-size: 100% 100%;
+}
+.techology-item:nth-child(1)::after {background-image: url(../img/photo/plus/1tex-car.svg);}
+.techology-item:nth-child(2)::after {background-image: url(../img/photo/plus/2tex-wall.svg);}
+.techology-item:nth-child(3)::after {background-image: url(../img/photo/plus/3-tex-cran.svg);}
+.techology-item h3 {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #000000;
+    padding-bottom: 24px;
+}
+.techology-item p {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: #000000;
+}
+
+/* Стилизация страницы контакты */
+.contact-center-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.contact-block {
+    box-sizing: border-box;
+    padding: 20px 20px 90px 20px;
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: calc(100%  / 3 - 20px);
+    position: relative;
+}
+.contact-block h3 {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #111111;
+    margin-bottom: 26px;
+}
+.contact-block p {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: #111111;
+    margin-bottom: 14px;
+}
+.contact-block .time {
+    margin-bottom: 6px;
+}
+.contact-block a {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    
+    color: #FF9C28;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.map-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.map-block > div {
+    width: calc(100% / 2 - 10px);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.map-block div iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Информационные страницы с боковым меню aside */
+.content-secondPage {
+    display: flex;
+    justify-content: space-between;
+}
+.section main {
+    width: 60%;
+}
+.section aside {
+    width: 30%;
+}
+
+/* Стилизация контента вторичных страниц */
+.section main > img{
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    margin-bottom: 24px;
+    object-fit: cover;
+}
+.section main p, .section main h3 {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #111111;
+    margin-bottom: 24px;
+}
+.section main h3 {color: #FF9C28;font-family: 'MontserratSemiBold', sans-serif;}
+.section aside .contactage-form {
+    position: sticky;
+    top: 110px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.section aside .contactage-form::before {
+    top: 0;
+    left: 0;
+    background-image: url(../img/svg/aside-left.svg);
+}
+.section aside .contactage-form::after {
+    top: 0;
+    right: 0;
+    background-image: url(../img/svg/aside-right.svg);
+}
+.section aside  .contactage-form::before, .section aside .contactage-form::after {
+    width: 100px;
+    z-index: -1;
+}
+
+.section main .ourProject-item {
+    width: calc(100% / 2 - 20px) !important;
+}
+.section main .ourProject-item  img {
+    height: 180px;
+}
+
+/* Стилизация блоков ипотеки */
+.ipoteka-blocks {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.ipoteka-item {
+    box-sizing: border-box;
+    padding: 20px 12px 20px 12px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: calc(100% / 3 - 14px);
+    transition: 0.3s;
+}
+.ipoteka-item:hover {
+    transform: scale(1.05);
+}
+.ipoteka-item img {
+    margin: 0 auto 20px;
+    display: flex;
+}
+.ipoteka-item p {
+    margin-bottom: 12px !important;
+}
+.ipoteka-item .btn {
+    width: 125px;
+    height: 25px;
+    font-size: 12px;
+    text-transform: none;
+    color: #FFFFFF;
+    margin: 0 0;
+}
+
+/* Стилизация покупки квартиры */
+.section main ol {
+    list-style-type: auto;
+    counter-reset: myCounter;
+}
+.section main li {
+    list-style: none;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 25px 20px 1px 50px;
+    position: relative;
+    /* display: flex;
+    align-items: center; */
+}
+.section main li::before {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 20px;
+    color: #DCDCDC;
+    margin-right: 20px;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+.section main li h3 {
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+    margin-bottom: 14px;
+}
+.section main li p {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+}
+.section main li p a{
+    text-decoration-line: underline;
+    color: #FF9C28;
+}
+
+.mini-bootom {
+    margin-bottom: 40px !important;
+}
+.mini-bootom .content-findApartment {
+    margin-top: 30px;
+}
+
+/* Стилизация карточки квартиры */
+.findApartment-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.findApartment-item {
+    width: 100%;
+    min-height: 145px;
+    height: min-content;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    box-sizing: border-box;
+    padding: 20px 60px 20px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Стилизация элементов карточки  */
+.findApartment-item .img{
+    width: 15%;
+}
+.findApartment-item .main-info{
+    width: 65%;
+}
+.findApartment-item .main-info h3{
+    font-family: 'MontserratSemiBold', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+    margin-bottom: 24px;
+}
+.findApartment-item .main-info p, .findApartment-item .main-info .kv {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+}
+.findApartment-item .main-info .kv {
+    display: flex;
+}
+.findApartment-item .main-info .kv div:nth-child(1) {
+   margin-right: 5em; 
+}
+.findApartment-item .ipoteka{
+    width: 10%;
+}
+.findApartment-item .ipoteka p {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #111111;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.findApartment-item .ipoteka a {
+    font-family: 'MontserratMedium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #EE8000;
+    width: 100%;
+    display: block;
+}
+.findApartment-item .price{
+    width: 10%;
+}
+.findApartment-item .price p:nth-child(1) {
+    font-family: 'MontserratRegular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #111111;
+}
+.findApartment-item .price p:nth-child(2) {
+    font-family: 'MontserratMedium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+
+/* ADAPTIVE */
+/* VER 1680px */
+@media screen and (max-width: 1680px) {
+    .ourPlus-item:nth-child(1)::after, 
+    .ourPlus-item:nth-child(2)::after, 
+    .ourPlus-item:nth-child(3)::after, 
+    .ourPlus-item:nth-child(4)::after {
+        width: 70px;
+        height: 70px;
+    }
+    .ourPlus-num {
+        font-size: 85px;
+        line-height: 100px;
+    }
+    .ourPlus-txt {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+/* VER 1600px */
+@media screen and (max-width: 1600px) {
+    .wrapper {
+        margin: 0 100px;
+    }
+    .wrapper-2 {
+        margin: 0 200px;
+    }
+    .about-block .text {
+        padding: 20px 30px;
+    }
+    .about-block .text p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .techology-item:nth-child(1)::after, 
+    .techology-item:nth-child(2)::after, 
+    .techology-item:nth-child(3)::after {
+        width: 90px;
+        height: 90px;
+    }
+    .techology-item {
+        padding: 20px 130px 30px 20px;
+    }
+    .techology-item p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .ipoteka-item {
+        width: calc(100% / 2 - 10px);
+    }
+    .section main .ourProject-item  img {
+        height: 150px;
+    }
+    .video-black h1 {
+        font-size: 60px;
+        line-height: 65px;
+    }
+}
+
+/* VER 1536px */
+@media screen and (max-width: 1536px) {
+    .footer-content-up > div p {
+        font-size: 12px;
+        line-height: 15px;
+        width: 17em;
+    }
+    .footer-content-up img {
+        height: 70px;
+        width: 200px;
+        margin-bottom: 14px;
+    }
+    .footer-content-up > div ul li a {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .footer-content-up > div .info li:nth-child(3) a, 
+    .footer-content-up > div .info li:nth-child(4) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .section h2 div::before, 
+    .leftTitle h1 div::before {
+        width: 55px;
+        height: 50px;
+        background-size: 100% 100%;
+    }
+    .purchase-item a p:nth-child(3) {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .purchase-item a p:nth-child(2) {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    .purchase-item {
+        padding: 40px 30px;
+        height: 180px;
+    }
+    .purchase-item a img {
+        width: 180px;
+        height: 180px;
+    }
+    .formCalc::before, .formCalc::after, 
+    .contactage-form::before, .contactage-form::after {
+        width: 100px;
+    }
+    .contact-block {
+        width: calc(100%  / 3 - 14px);
+    }
+    .contact-block a {
+        bottom: 30px;
+    }
+}
+
+/* VER 1440px */
+@media screen and (max-width: 1440px) {
+    .wrapper-2 {
+        margin: 0 150px;
+    }
+    .section main {
+        width: 65%;
+    }
+    .ourPlus-num {
+        font-size: 80px;
+        line-height: 90px;
+    }
+    .ourProject-item a img {
+        height: 160px;
+    }
+    .techology-item {
+        padding: 20px 20px 30px 20px;
+    }
+    .techology-item h3 {
+        padding-bottom: 30px;
+        width: calc(100% - 100px);
+    }
+    .techology-item:nth-child(1)::after, 
+    .techology-item:nth-child(2)::after, 
+    .techology-item:nth-child(3)::after {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* VER 1408px */
+@media screen and (max-width: 1408px) {
+    .new-item {
+        width: calc(100% / 2 - 5px);
+    }
+    .contact-block p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .new-item-last {
+        display: block;
+    }
+    .splide__slide img {
+        height: 300px;
+    }
+}
+
+/* VER 1400px */
+@media screen and (max-width: 1400px) {
+    .header-content .menu nav ul li a {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .btn-num div:nth-child(1) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .ourPlus {
+        flex-wrap: wrap;
+    }
+    .ourPlus-item {
+        width: calc(100% / 2 - 20px);
+    }
+    .ourPlus-item {
+        padding: 0px 20px 30px 20px;
+        width: calc(100% / 2 - 20px);
+    }
+    .ourProject-item {
+        width: calc(100% / 2 - 20px) !important;
+    }
+}
+
+/* VER 1368px */
+@media screen and (max-width: 1368px) {
+    .about-block .ourPlus-num {
+        font-size: 55px;
+        line-height: 110px;
+    }
+    .techology-item h3 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .techology-item p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .section aside {
+        width: 32%;
+    }
+    .findApartment-item .main-info {
+        width: 59%;
+    }
+    .findApartment-item .ipoteka {
+        width: 12%;
+    }
+}
+
+/* VER 1280px */
+@media screen and (max-width: 1280px) {
+    .wrapper-2, .wrapper {
+        margin: 0 60px;
+    }
+    .formCalc::before, .formCalc::after, 
+    .contactage-form::before, .contactage-form::after {
+        width: 60px;
+    }
+    .filter-param-body select {
+        width: 14em;
+    }
+    .filter-param-box {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .section h2 div::before, .leftTitle h1 div::before {
+        top: 1px;
+        left: -19px;
+    }
+}
+/* VER 1090px */
+@media screen and (max-width: 1090px) {
+    .btn-num div:nth-child(1) {
+        display: none;
+    }
+    .btn-num:hover {
+        width: 40px;
+    }
+    .btn-num div:nth-child(2), .btn-eye {
+        margin-left: 0px;
+    }
+    .btn-num {
+        margin-right: 10px;
+    }
+    .header-content .logo img {
+        width: 140px;
+        height: 45px;
+    }
+    .footer-content-up > div .title {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .footer-content-up > div .info li:nth-child(1) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .video_bg {
+        width: 150%;
+    }
+}
+
+/* VER 1024px */
+@media screen and (max-width: 1024px) {
+    .button-menu {
+        z-index: 3;
+    }
+    .btn-menu {
+        display: block;
+    }
+    .menu {
+        position: absolute;
+    }
+    .header-content .menu nav ul {
+        flex-direction: column;
+    }
+    .menu {
+        position: absolute;
+        height: 100vh;
+        width: 320px;
+        right: -380px;
+        top: 0px;
+        background-color: #FFF;
+        z-index: 2;
+        padding: 110px 0px 0px 0px;
+        transition: 0.3s;
+        box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+    }
+    .menuActive {
+        right: -60px;
+    }
+    .header-content .menu nav ul li a {
+        color: #111111 !important;
+    }
+    .header-content .menu nav ul li {
+        margin: 0px 0px 12px 0px !important;
+    }
+    .header-content .menu nav ul li a {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .btn-menuActive .line:nth-child(2){
+        display: none;
+    }
+    .btn-menuActive .line:nth-child(1){
+        rotate: 45deg;
+        top: 19px;
+    }
+    .btn-menuActive .line:nth-child(3){
+        rotate: -45deg;
+        top: 19px;
+    }
+   
+    .video-black h1 {
+        font-size: 50px;
+        line-height: 54px;
+    }
+    .purchase-item a p:nth-child(2) {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .purchase-item a p:nth-child(3) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .about-block .about-child {
+        width: calc(100% / 1);
+    }
+    .map-block > div {
+        width: calc(100% / 1);
+    }
+    .map-block div iframe {
+        width: 100%;
+        height: 300px;
+    }
+    .footer-content-up {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-content-up > div p {
+        width: 40%;
+        margin: 0 auto;
+    }
+    .footer-conten-down p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .section main .ourProject-item {
+        width: calc(100% / 1 ) !important;
+    }
+    .section aside {
+        width: 34%;
+    }
+    .section main > img {
+        height: 250px;
+    }
+    .section main p, .section main h3 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .findApartment-item .main-info h3 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .findApartment-item .main-info p, .findApartment-item .main-info .kv {
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .findApartment-item .ipoteka p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .findApartment-item .ipoteka a {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .findApartment-item .price p:nth-child(1) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .findApartment-item .price p:nth-child(2) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .findApartment-item .img {
+        width: 18%;
+    }
+    .findApartment-item .main-info {
+        width: 55%;
+    }
+    .findApartment-item .price {
+        width: 12%;
+    }
+    .btn {
+        width: 230px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .section main li h3 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .section main li p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .section main li::before {
+        font-size: 25px;
+        line-height: 20px;
+        top: 20px;
+    }
+    .leftTitle h1, .leftTitle h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .section h2 div::before, .leftTitle h1 div::before {
+        top: -7px;
+        left: -15px;
+    }
+}
+
+/* VER 960px */
+@media screen and (max-width: 960px) {
+    .wrapper-2, .wrapper {
+        margin: 0 30px;
+    }
+    .menuActive {
+        right: -30px;
+    }
+    .purchase-item:nth-child(2) {
+        width: calc(100% / 2 - 20px);
+    }
+    .purchase-item:nth-child(3) {
+        width: calc(100% / 1 - 20px);
+    }
+    .formCalc::before, .formCalc::after, .contactage-form::before, .contactage-form::after {
+        width: 30px;
+    }
+    .date-more .date, .date-more .more {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .new-item a h3 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .new-item a p {
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .footer-content-up {
+        gap: 40px;
+    }
+    .ourPlus-txt {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .ourPlus-num {
+        font-size: 60px;
+        line-height: 90px;
+    }
+    .ourPlus-item:nth-child(1)::after, 
+    .ourPlus-item:nth-child(2)::after, 
+    .ourPlus-item:nth-child(3)::after, 
+    .ourPlus-item:nth-child(4)::after {
+        width: 60px;
+        height: 60px;
+    }
+    .techology-item {
+        width: calc(100% / 1);
+        padding: 20px 130px 30px 20px;
+    }
+    .splide__slide img {
+        height: 220px;
+    }
+    .footer-content-up > div p {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .purchase-item a img {
+        width: 150px;
+        height: 150px;
+    }
+    .purchase-item {
+        padding: 30px 30px;
+        height: 150px;
+    }
+    .content-secondPage {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .section main {
+        width: 100%;
+    }
+    .section aside {
+        width: 100%;
+    }
+    .findApartment-blocks {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* VER 854px */
+@media screen and (max-width: 854px) {
+    .video_wrap {
+        min-height: 580px;
+        max-height: 580px;
+    }
+    .video-black {
+        min-height: 580px;
+        max-height: 580px;
+    }
+    .video-black h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .upContent {
+        margin-top: 650px;
+    }
+    .section h2, .leftTitle h1, .contactage-form h4 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .findApartment-item {
+        height: min-content;
+        padding: 20px 20px 20px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        width: calc(100% / 2 - 10px);
+        flex-wrap: wrap;
+    }
+    .findApartment-blocks {
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .findApartment-item .img, .findApartment-item .main-info {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .findApartment-item .img img {
+        margin: 0 auto;
+        display: flex;
+    }
+    .findApartment-item .ipoteka, .findApartment-item .price {
+        width: calc(100% / 2);
+    }
+    .contact-block {
+        width: calc(100%  / 1);
+    }
+}
+
+/* VER 800px */
+@media screen and (max-width: 800px) {
+    .video_wrap {
+        min-height: 400px;
+        max-height: 400px;
+    }
+    .video-black {
+        min-height: 400px;
+        max-height: 400px;
+    }
+    .upContent {
+        margin-top: 450px;
+    }
+    .video-black h1 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+/* VER 768px */
+@media screen and (max-width: 768px) {}
+
+/* VER 720px */
+@media screen and (max-width: 720px) {}
+
+/* VER 704px */
+@media screen and (max-width: 704px) {}
+
+/* VER 640px */
+@media screen and (max-width: 640px) {
+    .ourPlus-item {
+        width: calc(100% / 1);
+    }
+    .ourProject-item {
+        width: calc(100% / 1) !important;
+    }
+    .purchase-item:nth-child(1) {
+        width: calc(100% / 1);
+    }
+    .purchase-item:nth-child(2) {
+        width: calc(100% / 1);
+    }
+    .formFilter-body {
+        justify-content: center;
+    }
+    .filter-button {
+        display: contents;
+    }
+    .new-item {
+        width: calc(100% / 1);
+    }
+    .new-item-last {
+        display: none;
+    }
+    .about-block .ourPlus-item {
+        width: calc(100% / 1);
+    }
+}
+
+/* VER 560px */
+@media screen and (max-width: 560px) {
+    .breadcrumbs {
+        margin-top: 90px;
+    }
+    .video_wrap {
+        min-height: 350px;
+        max-height: 350px;
+    }
+    .video-black {
+        min-height: 350px;
+        max-height: 350px;
+    }
+    .upContent {
+        margin-top: 400px;
+    }
+    .header {
+        height: 60px;
+    }
+    .header-content {
+        height: 60px;
+    }
+    .menu {
+        padding: 100px 0px 0px 0px;
+    }
+    .header-content .menu nav ul li a {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .video-black h1 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    .header-content .logo img {
+        width: 100px;
+        height: 34px;
+    }
+    .section h2, .leftTitle h1, .contactage-form h4 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .section h2 div::before, .leftTitle h1 div::before {
+        width: 34px;
+        height: 35px;
+    }
+    .section h2 div::before, .leftTitle h1 div::before {
+        top: -6px;
+        left: -10px;
+    }
+    .ourPlus-item {
+        padding: 20px 20px 30px 20px;
+    }
+    .ourPlus-num, .about-block .ourPlus-num {
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .ourPlus-item:nth-child(1)::after, 
+    .ourPlus-item:nth-child(2)::after, 
+    .ourPlus-item:nth-child(3)::after, 
+    .ourPlus-item:nth-child(4)::after {
+        width: 40px;
+        height: 40px;
+    }
+    .ourPlus-txt {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .ourProject-item a p:nth-child(2) {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .ourProject-item a p:nth-child(3) {
+        font-size: 12px;
+        line-height: 19px;
+    }
+    .ourProject-item a img {
+        height: 120px;
+    }
+    .purchase-item a p:nth-child(2) {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .purchase-item a p:nth-child(3) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .breadcrumbs a {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .about-block .text p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .techology-item h3 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .techology-item p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .techology-item:nth-child(1)::after, .techology-item:nth-child(2)::after, .techology-item:nth-child(3)::after {
+        width: 60px;
+        height: 60px;
+    }
+    .splide__slide img {
+        height: 150px;
+    }
+    .section main p, .section main h3 {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .ipoteka-item {
+        width: calc(100% / 1);
+    }
+    .findApartment-item .main-info h3 {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .findApartment-item .main-info p, .findApartment-item .main-info .kv {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .findApartment-item .ipoteka a {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .findApartment-item .price p:nth-child(2) {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .footer-content-up > div p {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .section main > img {
+        height: 200px;
+    }
+    .contact-block h3 {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 24px;
+    }
+    .contact-block p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .contact-block a {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .map-block div iframe {
+        width: 100%;
+        height: 210px;
+    }
+}
+
+/* VER 490px */
+@media screen and (max-width: 490px) {
+    .findApartment-item {
+        width: calc(100% / 1 );
+    }
+}
+
+/* VER 400px */
+@media screen and (max-width: 400px) {
+    .wrapper-2, .wrapper {
+        margin: 0 10px;
+    }
+    .menuActive {
+        right: -10px; }
+   .video_bg {
+        width: 500%;
+    }
+    .formCalc::before, .formCalc::after, .contactage-form::before, .contactage-form::after {
+        width: 10px;
+    }
+    .filter-param-box {
+        margin-right: 0px;
+    }
+    .techology-item h3 {
+        width: calc(100%);
+    }
+    .techology-item {
+        padding: 20px 90px 30px 20px;
+    }
+    .section aside  .contactage-form::before, .section aside .contactage-form::after {
+       display: none;
+    }
+    .section main > img {
+        height: 160px;
+    }
+
+}
+
+/* VER 352px */
+@media screen and (max-width: 352px) {}
+
+/* VER 320px */
+@media screen and (max-width: 320px) {
+    .about-block .text {
+        padding: 20px 20px;
+    }
+    .new-item {
+        padding: 10px 10px 20px 10px;
+    }
+}
+
+
+
